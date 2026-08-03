@@ -28,10 +28,10 @@ Select an existing version control provider or click **Connect to a different VC
 
 <figure><img src="../../.gitbook/assets/image (294).png" alt=""><figcaption></figcaption></figure>
 
-Provide the git repository URL and click the **Continue** button.
+For GitHub (OAuth or App), GitLab, Bitbucket, and Azure DevOps connections, search and pick a repository from a paginated list backed by the provider's API instead of typing a URL — this scales to organizations with thousands of repositories. Select one and click **Continue**.
 
 {% hint style="info" %}
-If you want to connect to a private git repo using SSH Keys you will need to provide the url in ssh format. Example git@github.com:jcanizalez/terraform-sample-repository.git. For more information see [ssh.md](../vcs-providers/ssh.md "mention")
+SSH connections don't support repository discovery, since there's no provider API to query — provide the git repository URL directly, in SSH format. Example git@github.com:jcanizalez/terraform-sample-repository.git. For more information see [ssh.md](../vcs-providers/ssh.md "mention")
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/image (317).png" alt=""><figcaption></figcaption></figure>
