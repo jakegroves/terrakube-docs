@@ -51,6 +51,7 @@
   * [Team Management](user-guide/organizations/team-management.md)
   * [API Tokens](user-guide/organizations/api-tokens.md)
   * [Federated Identity](user-guide/organizations/federated-identity.md)
+  * [Variable Collections](user-guide/organizations/variable-collections.md)
   * [Templates](user-guide/organizations/templates/README.md)
     * [Default Templates](user-guide/organizations/templates/default-templates.md)
     * [Persistent Context](user-guide/organizations/templates/persistent-context.md)
@@ -285,4 +286,5 @@
   * [Agent](api/methods/agent.md)
   * [Collection](api/methods/collection.md)
   * [Collection Item](api/methods/collection-item.md)
+  * [Collection Reference](api/methods/collection-reference.md)
   * [Federated Identity](api/methods/federated.md)

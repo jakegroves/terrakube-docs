@@ -20,6 +20,14 @@ In this section:
 [api-tokens.md](api-tokens.md)
 {% endcontent-ref %}
 
+{% content-ref url="federated-identity.md" %}
+[federated-identity.md](federated-identity.md)
+{% endcontent-ref %}
+
+{% content-ref url="variable-collections.md" %}
+[variable-collections.md](variable-collections.md)
+{% endcontent-ref %}
+
 {% content-ref url="templates/" %}
 [templates](templates/)
 {% endcontent-ref %}
