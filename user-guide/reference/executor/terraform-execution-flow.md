@@ -6,6 +6,7 @@ When running a job inside the executor component the following logic is used:
   * /home/cnb/.terraform-spring-boot/executor/\{{ORGANIZATION\_ID\}}//\{{WORKSPACE\_ID\}}
 * The executor component will initially clone the workspace to the following folder:
   * /home/cnb/.terraform-spring-boot/executor/\{{ORGANIZATION\_ID\}}//\{{WORKSPACE\_ID\}}/.originRepository
+  * This is a shallow clone (`--depth 1`) of the branch tip when no specific commit is requested, which is faster on large repositories. A job that must check out a specific historical commit (for example an `apply` running against the commit recorded at `plan` time) automatically falls back to fetching that commit directly, or a full clone if the server doesn't support fetching by SHA.
 * All the files inside ".originalRepository" are moved to \{{ORGANIZATION\_ID\}}//\{{WORKSPACE\_ID\}} folder from previous step.
 * Te executor component will create the extension folders where you can store BASH or GROOVY extensions:
   * /home/cnb/.terraform-spring-boot/executor/\{{ORGANIZATION\_ID\}}/\{{WORKSPACE\_ID\}}/.terrakube/toolsRepository
