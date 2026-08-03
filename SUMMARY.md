@@ -78,6 +78,7 @@
   * [Creating Workspaces](user-guide/workspaces/creating-workspaces.md)
   * [Webhooks](user-guide/workspaces/webhooks.md)
   * [Team Access](user-guide/workspaces/team-access.md)
+  * [Job Output](user-guide/workspaces/job-output.md)
   * [Terraform State](user-guide/workspaces/terraform-state.md)
   * [Share Workspace State](user-guide/workspaces/share-workspace-state.md)
   * [Provider Cache](user-guide/workspaces/provider-cache.md)
