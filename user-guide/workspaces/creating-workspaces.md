@@ -43,7 +43,7 @@ Configure the workspace settings.
 | Workspace Name              | The name of your workspace is unique and used in tools, routing, and UI. Dashes, underscores, and alphanumeric characters are permitted.                                                                                               |
 | VCS branch                  | A list of branches separated by comma that jobs are allowed to kicked off from VCS webhook. This is not used for CLI workflow.                                                                                                         |
 | Terraform Working Directory | Default workspace directory. Use / for the root folder                                                                                                                                                                                 |
-| Terraform Version           | The version of Terraform to use for this workspace. Check [custom-terraform-cli-builds.md](../../getting-started/deployment/custom-terraform-cli-builds.md "mention") if you want to restrict the versions in your Terrakube instance. |
+| Terraform Version           | The version of Terraform to use for this workspace, or a version constraint (`~> 1.5`, `^1.5.0`, `1.5.x`, `>= 1.5, < 2.0`, etc.) to resolve to the latest matching version instead of pinning an exact one. Check [custom-terraform-cli-builds.md](../../getting-started/deployment/custom-terraform-cli-builds.md "mention") if you want to restrict the versions in your Terrakube instance. |
 
 Once you fill the settings click the **Create Workspace** button.
 
