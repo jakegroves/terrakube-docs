@@ -25,6 +25,16 @@ An example of how to import external tools can be found in the Terratag Groovy e
 This extension download the terratag binary and expose the binary to be used inside the linux PATH when using BASH commands.
 {% endhint %}
 
+A command's `before`/`beforeInit`/`after` flags control when it runs relative to `terraform init` and the step's main command (plan/apply/destroy):
+
+| Flag         | Runs                                                                 |
+| ------------- | ----------------------------------------------------------------------- |
+| `beforeInit`  | Before `terraform init`. If a `beforeInit` script fails, init is skipped entirely. |
+| `before`      | After `init`, before the main command. Ignored if `beforeInit` is also set. |
+| `after`       | After the main command succeeds.                                        |
+
+A separate `onFailure` list (a sibling of `commands`, not a flag on a command) runs only if the step's main command fails — use it for cleanup or failure notifications instead of `after`, which only runs on success.
+
 When using the following template:
 
 ```yaml
@@ -48,6 +58,11 @@ flow:
         before: true
         script: |
           helloWorld.sh
+    onFailure:
+      - runtime: "BASH"
+        priority: 100
+        script: |
+          notifyFailure.sh
 ```
 
 The following directory structure will be generating when using a workspace with the workspace with "[https://github.com/AzBuilder/terrakube-docker-compose](https://github.com/AzBuilder/terrakube-docker-compose)"

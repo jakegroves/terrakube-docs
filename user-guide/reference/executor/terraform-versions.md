@@ -28,3 +28,11 @@ Terraform binary is extracted to:
 
 The correct terraform PATH is add the the executor execution when running a job
 
+### OpenTofu
+
+A workspace's IaC tool (`terraform` or `tofu`) is chosen per-workspace (**Settings > General > IaC Type**, or `--iac-type` on `terrakube workspace create`/`update`). When a workspace is set to `tofu`, the executor downloads and runs OpenTofu binaries instead of Terraform, following the same download/extract flow described above.
+
+{% hint style="info" %}
+OpenTofu releases are indexed separately from Terraform, defaulting to the OpenTofu GitHub releases API instead of `releases.hashicorp.com`. This index can be overridden with the `CustomTofuReleasesUrl` environment variable, the OpenTofu equivalent of `CustomTerraformReleasesUrl` — see [Custom Terraform CLI Builds](../../../getting-started/deployment/custom-terraform-cli-builds.md).
+{% endhint %}
+
