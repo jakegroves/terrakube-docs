@@ -6,6 +6,8 @@ Federated identity lets an external OIDC issuer — most commonly GitHub Actions
 Federated credentials are managed from an organization's **Settings > Federated Credentials** tab, but the underlying trust configuration is instance-wide, and only a **superuser** can create, edit, or delete it. Organization admins who aren't superusers will see the tab but can't manage entries.
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/federated-identity-list.png" alt=""><figcaption><p>Federated Credentials, showing one credential with a claim condition</p></figcaption></figure>
+
 ### How it works
 
 1. A superuser registers a federated credential with a **name**, the OIDC **issuer URL** (e.g. `https://token.actions.githubusercontent.com` for GitHub Actions), and the expected **audience** (e.g. `api://Terrakube`).
@@ -17,14 +19,16 @@ Federated credentials are managed from an organization's **Settings > Federated 
 
 By default, any valid token from a registered issuer/audience is trusted. To narrow that down — for example, to only trust workflows from one specific repository — add one or more **claim conditions** to the federated credential. Every condition must match the token for it to be accepted (logical AND).
 
-Common GitHub Actions claims to scope by:
+Common claims to scope by, per provider:
 
-| Claim              | Example value                | Restricts to                                  |
-| ------------------- | ------------------------------ | ------------------------------------------------ |
-| `repository`         | `terrakube-io/terrakube`        | A specific repository                            |
-| `repository_owner`   | `terrakube-io`                  | Any repository under an org/user                 |
-| `ref`                 | `refs/heads/main`               | A specific branch                                |
-| `environment`         | `production`                    | Runs against a specific GitHub environment        |
+| Provider        | Example claim key   | Example value             | Restricts to                                |
+| ----------------- | --------------------- | ---------------------------- | ---------------------------------------------- |
+| GitHub Actions     | `repository`           | `terrakube-io/terrakube`      | A specific repository                          |
+| GitHub Actions     | `repository_owner`     | `terrakube-io`                | Any repository under an org/user               |
+| GitHub Actions     | `ref`                   | `refs/heads/main`             | A specific branch                              |
+| GitHub Actions     | `environment`           | `production`                  | Runs against a specific GitHub environment      |
+| GitLab CI            | `groups_direct`         | `terrakube-io`                | Members of a specific GitLab group              |
+| Azure AD             | `amr`                   | (issuer-specific)             | A specific authentication method reference      |
 
 ### Setting up GitHub Actions as a federated identity provider
 
@@ -37,6 +41,8 @@ In **Organization Settings > Federated Credentials**, click **Create federated c
 * **Name**: `github-actions` (this must match the team name in the next step)
 * **Issuer URL**: `https://token.actions.githubusercontent.com`
 * **Audience**: `api://Terrakube`
+
+<figure><img src="../../.gitbook/assets/federated-identity-create-form.png" alt=""><figcaption><p>Creating a federated credential with a claim condition</p></figcaption></figure>
 {% endstep %}
 
 {% step %}

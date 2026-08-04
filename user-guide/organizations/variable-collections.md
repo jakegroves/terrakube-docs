@@ -8,6 +8,8 @@ Manage collections from **Organization Settings > Variable Collections**.
 Managing collections requires the **Manage Collections** permission. See [Team Management](team-management.md).
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/variable-collections-list.png" alt=""><figcaption><p>A newly created variable collection, before any variables are added</p></figcaption></figure>
+
 ### Creating a collection
 
 1. Click **New collection**, give it a **name**, an optional **description**, and a **priority** (see [Resolution order](#resolution-order) below).
@@ -27,9 +29,11 @@ Each item in a collection has the same shape as a regular workspace variable:
 | HCL         | Whether the value should be parsed as HCL instead of a plain string  |
 | Description | Optional note                                                        |
 
+<figure><img src="../../.gitbook/assets/variable-collections-edit.png" alt=""><figcaption><p>A collection with one environment variable added</p></figcaption></figure>
+
 ### Attaching a collection to workspaces
 
-A collection's **References** tab lists every workspace it's applied to. Add a reference by picking a workspace and an optional description, or remove one to detach the collection from that workspace — this doesn't delete the collection or its variables, it just stops applying them to that workspace.
+On the collection's edit page, the **Apply to workspaces** field under **Variable collection scope** picks which workspaces the collection applies to. Only the workspaces selected there receive the collection's variables — removing a workspace from this list detaches the collection without deleting the collection or its variables.
 
 ### Resolution order
 

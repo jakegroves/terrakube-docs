@@ -31,6 +31,8 @@ When **Custom** is selected:
 
 Open the workspace, go to **Settings > Team Access**, select a team and a role, and click **Add**.
 
+<figure><img src="../../.gitbook/assets/workspace-team-access.png" alt=""><figcaption><p>Team Access tab, with one team granted the Write role</p></figcaption></figure>
+
 {% hint style="info" %}
 This tab can also be managed via the `terrakube_workspace_access` resource in the [Terrakube Terraform provider](https://registry.terraform.io/providers/AzBuilder/terrakube), or the [Workspace Access](../terrakube-cli/commands/workspace-access/) CLI commands.
 {% endhint %}

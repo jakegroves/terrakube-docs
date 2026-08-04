@@ -46,11 +46,11 @@ When **Custom** is selected, pick individual permissions:
 | Manage State                | Allow members to see the terraform/tofu state from the UI                          |
 | Manage [VCS Settings](../vcs-providers/) & SSH | Allow members to create and administrate all [VCS Providers](../vcs-providers/) and SSH keys within the organization |
 
-<figure><img src="../../.gitbook/assets/image (426) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team-management-create-form.png" alt=""><figcaption><p>New Team form with the Admin/Write/Plan/Read/Custom role selector</p></figcaption></figure>
 
 Finally click the **Create team** button and the team will be created
 
-<figure><img src="../../.gitbook/assets/image (246).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/team-management-teams-list.png" alt=""><figcaption><p>Teams list, showing preset (Admin) and Custom roles</p></figcaption></figure>
 
 Now all the users inside the team will be able to manage the specific resources within the organization based on the permissions you grantted.
 
